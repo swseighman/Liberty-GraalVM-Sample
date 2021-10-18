@@ -1,6 +1,6 @@
 # Creating a Liberty Server Sample Image with GraalVM
 
-In this basic example, you'll create a simple REST microservice running on Open Liberty, using GraalVM.  The goal with this example is to package the application along with the server configuration into a GraalVM-based Docker image and run that image as a container.
+In this basic example, you'll create a simple REST microservice running on Open Liberty, using GraalVM.  The goal with this example is to package the application along with the server configuration into a GraalVM-based container image.
 
 Let's get started!
 
