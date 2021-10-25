@@ -4,7 +4,7 @@ In this basic example, you'll create a simple REST microservice running on Open 
 
 Let's get started!
 
-Begin by cloning the sample repository:
+Begin by cloning the example repository:
 ```
 $ git clone https://github.com/swseighman/Liberty-GraalVM-Sample.git
 ```
