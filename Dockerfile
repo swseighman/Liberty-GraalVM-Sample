@@ -12,28 +12,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM container-registry.oracle.com/graalvm/enterprise:latest
+# FROM container-registry.oracle.com/graalvm/enterprise:latest
+FROM container-registry.oracle.com/graalvm/jdk-ee:java11-21.3.0
 
 ARG VERBOSE=false
 ARG OPENJ9_SCC=false
-ARG EN_SHA=22d5722d306eaf9b5c658a81e7a9e301f1d956b820ea7497bb71cb61c5715d21
-ARG NON_IBM_SHA=163424d07846c44f428786fcaabeca1c9f24fde84e61e2a28f90858b968f3a72
-ARG NOTICES_SHA=da6cdfe101e6dd1d60c10df4fe74b85ac4e4c0a920cc5f12c27bba2be81912b2
+ARG EN_SHA=5531853803b16c250b8c785873c9b095a9f5c295b62106ef026e2546d596a11a
+ARG NON_IBM_SHA=1ebddca70b6f828f3c02b1bead777847da022dd2168c2f2448df0142321065a0
+ARG NOTICES_SHA=160afa9b79e037e552fb7901c30f9261b068d1be23ec7933b93206be02b3a755
 
 LABEL org.opencontainers.image.authors="Leo Christy Jesuraj, Arthur De Magalhaes, Chris Potter" \
       org.opencontainers.image.vendor="IBM" \
       org.opencontainers.image.url="http://wasdev.net" \
       org.opencontainers.image.documentation="https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html" \
-      org.opencontainers.image.version="21.0.0.10" \
-      org.opencontainers.image.revision="cl211020210920-1900" \
+      org.opencontainers.image.version="21.0.0.9" \
+      org.opencontainers.image.revision="cl210920210824-2341" \
       vendor="IBM" \
       name="IBM WebSphere Liberty" \
-      version="21.0.0.10" \
+      version="21.0.0.9" \
       summary="Image for WebSphere Liberty with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Red Hat's UBI 8" \
       description="This image contains the WebSphere Liberty runtime with IBM Semeru Runtime Open Edition OpenJDK with OpenJ9 and Red Hat's UBI 8 as the base OS.  For more information on this image please see https://github.com/WASdev/ci.docker#building-an-application-image"
 
 # Install WebSphere Liberty
-ENV LIBERTY_VERSION 21.0.0_10
+ENV LIBERTY_VERSION 21.0.0_09
 
 ARG LIBERTY_URL
 ARG DOWNLOAD_OPTIONS=""
@@ -64,8 +65,8 @@ ENV PATH=/opt/ibm/wlp/bin:/opt/ibm/helpers/build:$PATH
 # Add labels for consumption by IBM Product Insights
 LABEL "ProductID"="fbf6a96d49214c0abc6a3bc5da6e48cd" \
       "ProductName"="WebSphere Application Server Liberty" \
-      "ProductVersion"="21.0.0.10" \
-      "BuildLabel"="cl211020210920-1900"
+      "ProductVersion"="21.0.0.9" \
+      "BuildLabel"="cl210920210824-2341"
 
 # Set Path Shortcuts
 ENV LOG_DIR=/logs \
